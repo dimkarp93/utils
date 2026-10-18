@@ -2,6 +2,8 @@ package collections
 
 import (
 	"cmp"
+	"maps"
+	"slices"
 )
 
 func ToSet[T comparable](items []T) map[T]bool {
@@ -14,7 +16,7 @@ func ToSet[T comparable](items []T) map[T]bool {
 }
 
 func SortedKeys[K cmp.Ordered, V any](m map[K]V) []K {
-	panic("not implemented")
+	return slices.Sorted(maps.Keys(m))
 }
 
 func CountBy[T any, K comparable](items []T, key func(T) K) map[K]int {
