@@ -1,6 +1,9 @@
 package collections
 
-import "cmp"
+import (
+	"cmp"
+	"slices"
+)
 
 func Unique[T comparable](items []T) []T {
 	return UniqueBy(items, identity)
@@ -21,7 +24,10 @@ func UniqueBy[T any, K comparable](items []T, key func(T) K) []T {
 }
 
 func SortedUnique[T cmp.Ordered](items []T) []T {
-	panic("not implemented")
+	out := slices.Clone(items)
+	slices.Sort(out)
+
+	return slices.Compact(out)
 }
 
 func identity[T any](item T) T {
