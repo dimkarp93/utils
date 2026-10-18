@@ -10,5 +10,9 @@ func At[T any](items []T, i int) T {
 }
 
 func OrDefault[T any](items []T, def []T) []T {
-	panic("not implemented")
+	if len(items) == 0 {
+		return def
+	}
+
+	return items
 }
