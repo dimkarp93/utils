@@ -5,7 +5,12 @@ import (
 )
 
 func ToSet[T comparable](items []T) map[T]bool {
-	panic("not implemented")
+	set := make(map[T]bool, len(items))
+	for _, item := range items {
+		set[item] = true
+	}
+
+	return set
 }
 
 func SortedKeys[K cmp.Ordered, V any](m map[K]V) []K {
