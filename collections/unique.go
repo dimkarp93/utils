@@ -3,7 +3,7 @@ package collections
 import "cmp"
 
 func Unique[T comparable](items []T) []T {
-	panic("not implemented")
+	return UniqueBy(items, identity)
 }
 
 func UniqueBy[T any, K comparable](items []T, key func(T) K) []T {
@@ -22,4 +22,8 @@ func UniqueBy[T any, K comparable](items []T, key func(T) K) []T {
 
 func SortedUnique[T cmp.Ordered](items []T) []T {
 	panic("not implemented")
+}
+
+func identity[T any](item T) T {
+	return item
 }
