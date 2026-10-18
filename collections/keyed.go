@@ -29,5 +29,11 @@ func CountBy[T any, K comparable](items []T, key func(T) K) map[K]int {
 }
 
 func GroupBy[T any, K comparable](items []T, key func(T) K) map[K][]T {
-	panic("not implemented")
+	out := make(map[K][]T)
+	for _, item := range items {
+		k := key(item)
+		out[k] = append(out[k], item)
+	}
+
+	return out
 }
