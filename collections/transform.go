@@ -12,7 +12,12 @@ func Filter[T any](items []T, keep func(T) bool) []T {
 }
 
 func Map[T, R any](items []T, fn func(T) R) []R {
-	panic("not implemented")
+	out := make([]R, 0, len(items))
+	for _, item := range items {
+		out = append(out, fn(item))
+	}
+
+	return out
 }
 
 func FlatMap[T, R any](items []T, fn func(T) []R) []R {
