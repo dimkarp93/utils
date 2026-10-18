@@ -30,5 +30,12 @@ func FlatMap[T, R any](items []T, fn func(T) []R) []R {
 }
 
 func CountFunc[T any](items []T, keep func(T) bool) int {
-	panic("not implemented")
+	count := 0
+	for _, item := range items {
+		if keep(item) {
+			count++
+		}
+	}
+
+	return count
 }
