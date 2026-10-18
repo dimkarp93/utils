@@ -20,7 +20,12 @@ func SortedKeys[K cmp.Ordered, V any](m map[K]V) []K {
 }
 
 func CountBy[T any, K comparable](items []T, key func(T) K) map[K]int {
-	panic("not implemented")
+	out := make(map[K]int)
+	for _, item := range items {
+		out[key(item)]++
+	}
+
+	return out
 }
 
 func GroupBy[T any, K comparable](items []T, key func(T) K) map[K][]T {
