@@ -54,4 +54,4 @@ The version lives in `versions.txt`; a `vX.Y.Z` tag triggers the release workflo
 
 ## License
 
-[MIT](LICENSE)
+[Apache-2.0](LICENSE)
