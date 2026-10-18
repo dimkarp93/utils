@@ -11,7 +11,9 @@ func TestToSetEmpty(t *testing.T) {
 }
 
 func TestToSetCollapsesDuplicates(t *testing.T) {
-	assert.Equal(t, map[string]bool{"a": true, "b": true}, ToSet([]string{"a", "b", "a"}))
+	want := map[string]bool{"a": true, "b": true}
+
+	assert.Equal(t, want, ToSet([]string{"a", "b", "a"}))
 }
 
 func TestSortedKeysEmpty(t *testing.T) {
@@ -19,7 +21,9 @@ func TestSortedKeysEmpty(t *testing.T) {
 }
 
 func TestSortedKeys(t *testing.T) {
-	assert.Equal(t, []string{"a", "b", "c"}, SortedKeys(map[string]int{"c": 1, "a": 2, "b": 3}))
+	m := map[string]int{"c": 1, "a": 2, "b": 3}
+
+	assert.Equal(t, []string{"a", "b", "c"}, SortedKeys(m))
 }
 
 func TestCountByEmpty(t *testing.T) {

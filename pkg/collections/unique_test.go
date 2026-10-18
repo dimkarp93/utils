@@ -20,7 +20,9 @@ func TestUniqueEmpty(t *testing.T) {
 }
 
 func TestUniqueKeepsFirstOccurrence(t *testing.T) {
-	assert.Equal(t, []string{"b", "a", "c"}, Unique([]string{"b", "a", "b", "c", "a"}))
+	items := []string{"b", "a", "b", "c", "a"}
+
+	assert.Equal(t, []string{"b", "a", "c"}, Unique(items))
 }
 
 func TestUniqueByEmpty(t *testing.T) {
@@ -38,7 +40,9 @@ func TestSortedUniqueEmpty(t *testing.T) {
 }
 
 func TestSortedUniqueDropsDuplicates(t *testing.T) {
-	assert.Equal(t, []string{"a", "b", "c"}, SortedUnique([]string{"c", "a", "b", "a", "c"}))
+	items := []string{"c", "a", "b", "a", "c"}
+
+	assert.Equal(t, []string{"a", "b", "c"}, SortedUnique(items))
 }
 
 func TestSortedUniqueKeepsInput(t *testing.T) {
