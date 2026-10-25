@@ -54,4 +54,4 @@ make bump-patch   # 1.2.3 -> 1.2.4, тег, push в origin
 
 ## Лицензия
 
-[MIT](LICENSE)
+[Apache-2.0](LICENSE)
